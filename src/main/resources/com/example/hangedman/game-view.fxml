@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e4bbd3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangedman.controller.GameController">
+    <children>
+        <GridPane layoutX="14.0" layoutY="57.0" style="-fx-background-color: #fbd4e4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="255.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="345.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints maxHeight="254.0" minHeight="10.0" prefHeight="253.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <children>
+                        <GridPane prefHeight="253.0" prefWidth="335.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="64.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="INTENTOS FALLIDOS" textFill="#86327b" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="SansSerif Bold" size="12.0" />
+                           </font></Label>
+                                <Button alignment="CENTER" mnemonicParsing="false" onAction="#onHandleButtonHelp" style="-fx-background-color: #cd5bac;" text="?" textFill="WHITE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="SansSerif Bold" size="12.0" />
+                           </font></Button>
+                                <TextField fx:id="letterField" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                                <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="INGRESA UNA LETRA:" textFill="#86327b" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="SansSerif Bold" size="12.0" />
+                           </font></Label>
+                                <TextArea fx:id="resultTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="5" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#OnHandleButtonValidateLetter" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #cd5bac;" text="OK" textFill="WHITE" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="SansSerif Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <HBox fx:id="wrongLettersContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="2">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="30.0" />
+                              <TextField prefHeight="25.0" prefWidth="30.0" />
+                              <TextField prefHeight="25.0" prefWidth="29.0" />
+                              <TextField prefHeight="25.0" prefWidth="30.0" />
+                              <TextField prefHeight="25.0" prefWidth="31.0" />
+                           </children>
+                        </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+                <GridPane alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label alignment="CENTER" text="TU PALABRA ES:" textAlignment="CENTER" textFill="#86327b" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <HBox fx:id="secretWordContainer" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <ImageView fx:id="hangmanStatus" fitHeight="197.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@images/hangman/0.png" />
+               </image></ImageView>
+            </children>
+        </GridPane>
+        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#OnHandleButtonBackTo" prefHeight="20.0" prefWidth="98.0" style="-fx-background-color: #a4387f;" text="Volver a Inicio" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></Button>
+        <Button layoutX="121.0" layoutY="2.0" mnemonicParsing="false" onAction="#OnHandleButtonHowTo" prefHeight="15.0" prefWidth="93.0" style="-fx-background-color: #a4387f;" text="¿Como jugar?" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></Button>
+    </children>
+</AnchorPane>
