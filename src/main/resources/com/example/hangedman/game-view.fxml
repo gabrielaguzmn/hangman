@@ -75,13 +75,14 @@
                               <Font name="SansSerif Bold" size="11.0" />
                            </font>
                         </Button>
-                        <HBox fx:id="wrongLettersContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="2">
+                        <HBox fx:id="wrongLettersContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="2">
                            <children>
                               <TextField prefHeight="25.0" prefWidth="30.0" />
                               <TextField prefHeight="25.0" prefWidth="30.0" />
                               <TextField prefHeight="25.0" prefWidth="29.0" />
                               <TextField prefHeight="25.0" prefWidth="30.0" />
                               <TextField prefHeight="25.0" prefWidth="31.0" />
+                              <TextField prefHeight="25.0" prefWidth="30.0" />
                            </children>
                         </HBox>
                             </children>
