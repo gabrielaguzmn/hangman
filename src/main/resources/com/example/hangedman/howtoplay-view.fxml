@@ -9,9 +9,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangedman.controller.HelpController">
     <top>
-        <VBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" style="-fx-background-color: #e4bbd3;" BorderPane.alignment="CENTER">
             <children>
-                <Label text="¿COMO JUGAR?">
+                <Label text="¿COMO JUGAR?" textFill="#cd5bac">
                     <font>
                         <Font name="SansSerif Bold" size="20.0" />
                     </font>
@@ -20,22 +20,28 @@
         </VBox>
     </top>
     <left>
-        <VBox prefHeight="249.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+        <VBox prefHeight="249.0" prefWidth="60.0" style="-fx-background-color: #fbd4e4;" BorderPane.alignment="CENTER" />
     </left>
     <center>
-        <VBox alignment="CENTER" prefHeight="282.0" prefWidth="480.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="282.0" prefWidth="480.0" style="-fx-background-color: #fbd4e4;" BorderPane.alignment="CENTER">
             <children>
-                <TextArea disable="true" editable="false" prefHeight="272.0" prefWidth="480.0" text="smsms&#10;&#10;s&#10;s&#10;ss&#10;&#10;s&#10;s&#10;s&#10;s&#10;s&#10;s&#10;s&#10;s" />
+                <TextArea disable="true" editable="false" prefHeight="272.0" prefWidth="480.0" text="INSTRUCCIONES.&#10;&#10;- Debes de ingresar un solo caracter alfabetico&#10;- ">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font></TextArea>
             </children>
         </VBox>
     </center>
     <right>
-        <VBox prefHeight="249.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+        <VBox prefHeight="249.0" prefWidth="60.0" style="-fx-background-color: #fbd4e4;" BorderPane.alignment="CENTER" />
     </right>
     <bottom>
-        <VBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: #fbd4e4;" BorderPane.alignment="CENTER">
             <children>
-                <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#OnHandleButtonClose" prefHeight="25.0" prefWidth="52.0" text="OK" />
+                <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#OnHandleButtonClose" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #cd5bac;" text="OK" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font></Button>
             </children>
         </VBox>
     </bottom>

@@ -99,6 +99,7 @@ public class GameController {
         }
     }
 
+    // interfaz
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -107,6 +108,7 @@ public class GameController {
         alert.showAndWait();
     }
 
+    // Interfaz
     private void gameStatusAlert(String title, String message){
         Alert gameStatusAlert = new Alert(Alert.AlertType.INFORMATION);
         gameStatusAlert.setTitle(title);
