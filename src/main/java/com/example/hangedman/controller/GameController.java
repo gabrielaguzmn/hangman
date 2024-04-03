@@ -29,6 +29,9 @@ public class GameController {
     private TextField letterField;
 
     @FXML
+    private TextField outputTextArea;
+
+    @FXML
     private TextArea resultTextArea;
 
     @FXML
@@ -38,6 +41,13 @@ public class GameController {
     int j = 0;
 
     String[] word;
+
+    public void WinMetod(){
+        if (Arrays.equals(word, secretWord.getArrayWord())){
+            gameStatusAlert("Has ganado", "Enhorabuena! Has adivinado la palabra");
+        }
+
+    }
 
 
     void setSecretWordContainer() {
@@ -77,9 +87,10 @@ public class GameController {
                 }
             }
 
-            if (Arrays.equals(word, secretWord.getArrayWord())){
-                gameStatusAlert("Has ganado", "Enhorabuena! Has adivinado la palabra");
-            }
+            //if (Arrays.equals(word, secretWord.getArrayWord())){
+                //gameStatusAlert("Has ganado", "Enhorabuena! Has adivinado la palabra");
+            //}
+            WinMetod();
         }
         else if ( !isValidWord(letter) || letter.length()!=1){
             showAlert("Error",
@@ -136,7 +147,48 @@ public class GameController {
 
     @FXML
     void onHandleButtonHelp(ActionEvent event) {
+        int tryRemainI;
 
+
+        String tryRemain= outputTextArea.getText();
+        tryRemainI = Integer.parseInt(tryRemain);
+        if (tryRemainI > 0){
+            tryRemainI = tryRemainI - 1;
+
+            tryRemain = Integer.toString(tryRemainI);
+            outputTextArea.setText(tryRemain);
+
+
+
+
+
+            int clue = (int)(Math.random() * secretWord.getWord().length()) ;
+            while(word[clue] == secretWord.getArrayWord()[clue]){
+                 clue = (int)(Math.random() * secretWord.getWord().length()) ;
+            }
+
+            if (word[clue] == null || word[clue].isEmpty()) {
+                String letterToFind = secretWord.getArrayWord()[clue];
+
+
+                for (int i = 0; i < secretWord.getWord().length(); i++) {
+                    if (secretWord.getArrayWord()[i].equals(letterToFind)) {
+                        word[i] = letterToFind;
+                        TextField wordTxt = (TextField) secretWordContainer.getChildren().get(i);
+                        wordTxt.setText(letterToFind);
+                    }
+                }
+            }
+
+
+
+            WinMetod();
+        }
+
+        else {
+            showAlert("Error",  "has gastado todas las ayudas disponibles");
+
+        }
     }
 
     private boolean isValidWord(String word) {
