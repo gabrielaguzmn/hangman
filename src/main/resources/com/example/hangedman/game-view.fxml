@@ -90,7 +90,7 @@
                               <Font name="SansSerif Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="outputTextArea" text="3" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                        <TextField fx:id="outputTextArea" text="3" GridPane.columnIndex="9" GridPane.rowIndex="2" editable="false"/>
                             </children>
                         </GridPane>
                     </children>

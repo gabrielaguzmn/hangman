@@ -25,7 +25,7 @@
     <center>
         <VBox alignment="CENTER" prefHeight="282.0" prefWidth="480.0" style="-fx-background-color: #fbd4e4;" BorderPane.alignment="CENTER">
             <children>
-                <TextArea disable="true" editable="false" prefHeight="272.0" prefWidth="480.0" text="INSTRUCCIONES.&#10;&#10;- Debes de ingresar un solo caracter alfabetico&#10;- ">
+                <TextArea disable="true" editable="false" prefHeight="272.0" prefWidth="480.0" text="&#10;&#10;INSTRUCCIONES.&#10;&#10;- Debes de ingresar un solo caracter alfabetico&#10;- Cuentas con SOLO tres pistas&#10;- Tienes SOLO cinco intentos de adivinar la palabra">
                <font>
                   <Font name="SansSerif Regular" size="12.0" />
                </font></TextArea>

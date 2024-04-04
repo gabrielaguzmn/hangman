@@ -4,10 +4,11 @@ import com.example.hangedman.model.SecretWord;
 import com.example.hangedman.view.GameStage;
 import com.example.hangedman.view.HelpStage;
 import com.example.hangedman.view.WelcomeStage;
+import com.example.hangedman.view.alert.AlertBox;
+import com.example.hangedman.view.alert.GameStatusAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+//import com.example.hangedman.view.alert.AlertBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -42,9 +43,10 @@ public class GameController {
 
     String[] word;
 
-    public void WinMetod(){
+    public void WinMethod(){
         if (Arrays.equals(word, secretWord.getArrayWord())){
-            gameStatusAlert("Has ganado", "Enhorabuena! Has adivinado la palabra");
+            GameStatusAlert gameStatusAlert = new GameStatusAlert();
+            gameStatusAlert.showMessage("Has ganado", "Enhorabuena! Has adivinado la palabra");
         }
 
     }
@@ -82,48 +84,19 @@ public class GameController {
                 resultTextArea.setText("La letra " + letter + " no está en la palabra secreta");
                 j++;
                 if (j==6){
-                    gameStatusAlert("Has perdido", "Lamentablemente no has adivinado la palabra. "+
+                    GameStatusAlert gameStatusAlert = new GameStatusAlert();
+                    gameStatusAlert.showMessage("Has perdido", "Lamentablemente no has adivinado la palabra. "+
                     "Tu palabra era "+secretWord.getWord());
                 }
             }
-
-            //if (Arrays.equals(word, secretWord.getArrayWord())){
-                //gameStatusAlert("Has ganado", "Enhorabuena! Has adivinado la palabra");
-            //}
-            WinMetod();
+            WinMethod();
         }
         else if ( !isValidWord(letter) || letter.length()!=1){
-            showAlert("Error",
+            AlertBox alertBox = new AlertBox();
+            alertBox.showMessage("Error",
                     "La letra que ingresaste contiene caracteres no alfabeticos o su extension es " +
                             "mayor a la esperada. Intenta de nuevo");
         }
-    }
-
-    // interfaz
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    // Interfaz
-    private void gameStatusAlert(String title, String message){
-        Alert gameStatusAlert = new Alert(Alert.AlertType.INFORMATION);
-        gameStatusAlert.setTitle(title);
-        gameStatusAlert.setHeaderText(null);
-        gameStatusAlert.setContentText(message);
-        gameStatusAlert.getButtonTypes().setAll(ButtonType.OK);
-        gameStatusAlert.setOnCloseRequest(eventOver -> {
-            GameStage.deleteInstance();
-            try {
-                WelcomeStage.getInstance();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
-        gameStatusAlert.showAndWait();
     }
 
     public void setSecretWord(SecretWord secretWord) {
@@ -184,11 +157,12 @@ public class GameController {
 
 
 
-            WinMetod();
+            WinMethod();
         }
 
         else {
-            showAlert("Error",  "has gastado todas las ayudas disponibles");
+            AlertBox alertBox = new AlertBox();
+            alertBox.showMessage("Error",  "has gastado todas las ayudas disponibles");
 
         }
     }
